@@ -35,7 +35,7 @@
             // - количество четных чисел
             // - произведение нечетных чисел
             int nMax = 0;
-            int nMin = 0;
+            int nMin = 1;
             int nSum = 0;
             int countEven = 0;
             int multiplicationNotEven = 0;
@@ -206,18 +206,19 @@
             Console.WriteLine("Введите число, которое необходмо найти в массиве");
 
             int a = Convert.ToInt32(Console.ReadLine());
-            int q = 0;
+            bool q = false;
             
             for (int i = 0; i < n; i++)
             {
                 if (a == numbers[i])
                 {
                     Console.WriteLine("Yes");
-                    q = 1;
+                    q = true;
+                    break;
                 }
             }
 
-            if (q == 0)
+            if (q == false)
             {
                 Console.WriteLine("No");
             }
