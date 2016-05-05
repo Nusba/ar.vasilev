@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lecture5
+﻿namespace Lecture5
 {
     public class Client
     {
-        public int Id;
-        public string Phone;
-        public double Sum;
+        protected readonly double Sum;
+        private int id;
+        private string phone;
 
-        public Client(int id, string phone, double sum )
+        protected Client(int id, string phone, double sum)
         {
-            Id = id;
-            Phone = phone;
-            Sum = sum;
+            this.id = id;
+            this.phone = phone;
+            this.Sum = sum;
         }
 
         public virtual string ReturnNameAndSum()

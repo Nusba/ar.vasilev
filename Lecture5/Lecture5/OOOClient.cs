@@ -1,19 +1,19 @@
 ﻿namespace Lecture5
 {
-    public class OOOClient : Client
+    public class OooClient : Client
     {
-        public string Name;
-        public string Account;
+        private readonly string name;
+        private string account;
 
-        public OOOClient(int id, string phone, double sum, string name, string account) : base(id,phone,sum)
+        public OooClient(int id, string phone, double sum, string name, string account) : base(id, phone, sum)
         {
-            Name = name;
-            Account = account;
+            this.name = name;
+            this.account = account;
         }
 
         public override string ReturnNameAndSum()
         {
-            return Name + " " + base.Sum;
+            return this.name + " " + base.Sum;
         }
     }
 }

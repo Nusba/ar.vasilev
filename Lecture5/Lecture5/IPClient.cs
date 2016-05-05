@@ -2,20 +2,20 @@
 {
     using System;
 
-    public class IPClient : Client
+    public class IpClient : Client
     {
-        public string Fio;
-        public DateTime Birthday;
+        private readonly string fio;
+        private DateTime birthday;
 
-        public IPClient(int id, string phone, double sum, string fio, DateTime birthday) : base(id,phone,sum)
+        public IpClient(int id, string phone, double sum, string fio, DateTime birthday) : base(id, phone, sum)
         {
-            Fio = fio;
-            Birthday = birthday;
+            this.fio = fio;
+            this.birthday = birthday;
         }
 
         public override string ReturnNameAndSum()
         {
-            return Fio + " " + base.Sum;
+            return this.fio + " " + base.Sum;
         }
     }
 }

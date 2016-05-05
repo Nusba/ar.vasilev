@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountBase.cs" />
+    <Compile Include="AccumulationAccount.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="CurentAccount.cs" />
     <Compile Include="IPClient.cs" />
+    <Compile Include="MetalAccount.cs" />
     <Compile Include="OOOClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavingAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

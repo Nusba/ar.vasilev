@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lecture._4
+﻿namespace Lecture._4
 {
-    using System.CodeDom;
-
     internal class Telephone
     {
-        private string Code;
-        private string Number;
+        private readonly string code;
+        private readonly string number;
 
         public Telephone(string code, string number)
         {
-            Code = code;
-            Number = number;
+            this.code = code;
+            this.number = number;
         }
 
         public string Compare()
         {
-            if (Code != null || Code != String.Empty)
+            if (this.code != null || this.code != string.Empty)
             {
-                return Number;
+                return this.number;
             }
-            return "(" + Code + ")" + Number;
-        }
 
+            return "(" + this.code + ")" + this.number;
+        }
     }
 }
