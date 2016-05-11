@@ -1,24 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lecture5
+﻿namespace Lecture5
 {
+    using System;
     // - расчетный - возможность пополнения и изъятия денег со счета, наличие платы за обслуживание, списание суммы за обслуживание со счета
     public class CurentAccount : AccountBase
     {
-        private int id;
-        private string owner;
-        private readonly double Sum;
-        private readonly double serviceCharges;
-
         public CurentAccount(int id, string owner, double sum, bool isClose, double serviceCharges) : base(id, owner, sum, isClose)
         {
-            this.id = id;
-            this.owner = owner;
-            this.Sum = sum;
+            this.ServiceCharges = serviceCharges;
+        }
+
+        public CurentAccount()
+        {
+            this.ServiceCharges = 100.99;
+        }
+
+        private double ServiceCharges { get; set; }
+
+        public bool EditServiceCharges(double funds)
+        {
+            if (this.IsClose)
+            {
+                Console.WriteLine($"Счет {this.Id}  закрыт, операция не может быть произведена.");
+                return false;
+            }
+            else
+            {
+                this.ServiceCharges = funds;
+                return true;
+            }
+        }
+
+        public bool WithdrawServiceCharges(double serviceCharges)
+        {
+            if (this.IsClose)
+            {
+                Console.WriteLine($"Счет {this.Id}  закрыт, операция не может быть произведена.");
+                return false;
+            }
+            else
+            {
+                if (this.Sum < serviceCharges)
+                {
+                    Console.WriteLine($"Невозможно провести списание. Cумма платы за обслуживание {serviceCharges} не может превышать остаток на счете {this.Sum}");
+                    return false;
+                }
+                else
+                {
+                    this.Sum = this.Sum - serviceCharges;
+                    return true;
+                }
+            }
         }
     }
 }

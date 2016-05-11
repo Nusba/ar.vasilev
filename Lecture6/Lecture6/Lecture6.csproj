@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AccountBase.cs" />
     <Compile Include="AccumulationAccount.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="CurentAccount.cs" />
     <Compile Include="MetalAccount.cs" />
     <Compile Include="Program.cs" />

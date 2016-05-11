@@ -10,7 +10,7 @@ namespace Lecture6
     {
         private int id;
         private string owner;
-        private readonly double Sum;
+        public double Sum;
         private bool isClose;
 
         protected AccountBase(int id, string owner, double sum, bool isClose)
