@@ -16,7 +16,7 @@
 
         private double ServiceCharges { get; set; }
 
-        public bool EditServiceCharges(double funds)
+        public bool EditServiceCharges(double serviceCharges)
         {
             if (this.IsClose)
             {
@@ -25,7 +25,7 @@
             }
             else
             {
-                this.ServiceCharges = funds;
+                this.ServiceCharges = serviceCharges;
                 return true;
             }
         }

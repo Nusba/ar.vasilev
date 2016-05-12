@@ -54,7 +54,7 @@
             }
         }
 
-        public bool EditCourseExchangeMetal(double funds)
+        public bool EditCourseExchangeMetal(double courseExchangeMetal)
         {
             if (this.IsClose)
             {
@@ -63,7 +63,8 @@
             }
             else
             {
-                this.CourseExchangeMetal = funds;
+                this.CourseExchangeMetal = courseExchangeMetal;
+                this.Sum = this.CourseExchangeMetal * this.GrammsMetal;
                 return true;
             }
         }

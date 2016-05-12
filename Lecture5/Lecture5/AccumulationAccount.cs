@@ -36,7 +36,7 @@
             }
         }
 
-        public bool EditPercentRate(double funds)
+        public bool EditPercentRate(double percentRate)
         {
             if (this.IsClose)
             {
@@ -45,7 +45,7 @@
             }
             else
             {
-                this.PercentRate = funds;
+                this.PercentRate = percentRate;
                 return true;
             }
         }
@@ -59,15 +59,15 @@
             }
             else
             {
-                if (this.FirstСontribution < funds)
+                if (this.Sum - funds < this.FirstСontribution)
                 {
                     Console.WriteLine(
-                        $"Невозможно провести списание. Списываемая сумма {funds} не может превышать сумму первоначального взноса {this.FirstСontribution}");
+                        $"Невозможно провести списание. Остаток на счете {this.Sum} не может быть меньше первоначального взноса {this.FirstСontribution}");
                     return false;
                 }
                 else
                 {
-                    if (this.Sum <= funds)
+                    if (this.Sum < funds)
                     {
                         Console.WriteLine(
                             $"Невозможно провести списание. Списываемая сумма {funds} не может превышать остаток на счете {this.Sum}");
