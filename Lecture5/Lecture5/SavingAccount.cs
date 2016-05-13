@@ -6,5 +6,9 @@
         public SavingAccount(int id, string owner, double sum, bool isClose) : base(id, owner, sum, isClose)
         {
         }
+
+        public SavingAccount()
+        {
+        }
     }   
 }

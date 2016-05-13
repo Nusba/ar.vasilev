@@ -26,7 +26,7 @@
 
         private double CourseExchangeMetal { get; set; }
 
-        public bool EditGrammsMetal(double funds)
+        public bool EditGrammsMetal(double grammsMetal)
         {
             if (this.IsClose)
             {
@@ -35,7 +35,7 @@
             }
             else
             {
-                this.GrammsMetal = funds;
+                this.GrammsMetal = grammsMetal;
                 return true;
             }
         }

@@ -1,44 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lecture5
+﻿namespace Lecture6
 {
-    using Lecture6;
-
-    class Client   
+    using System.Collections.Generic;
+    
+    // Класс относиться к заданию 1
+    public class Client
     {
-        List<AccountBase> accounts;
-
-        public CurentAccount currentAccount;
-        public MetalAccount metalAccount;
-
-        public double sum;
+        private readonly List<AccountBase> accounts = new List<AccountBase>();
 
         public Client()
         {
-            currentAccount = new CurentAccount(1, "123", 1.1, true, 1.1);
-            metalAccount = new MetalAccount(1, "123", 1.1, true, 1.1, "1кепеунр", 1.1);
-            List<AccountBase> accounts = new List<AccountBase>();
-            accounts.Add(currentAccount);
-            accounts.Add(metalAccount);
         }
 
-        public double Sum
+        public double CalculationTotal
         {
             get
             {
-                double summa = 0;
+                double total = 0;
+
                 foreach (AccountBase account in accounts)
                 {
-                    summa = +account.Sum;
+                    total = total + account.Sum;
                 }
-                return summa;
 
+                return total;
             }
         }
 
+        public void AddAccount(AccountBase newAccount)
+        {
+            accounts.Add(newAccount);
+        }
     }
 }

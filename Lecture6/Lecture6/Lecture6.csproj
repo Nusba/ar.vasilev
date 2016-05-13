@@ -7,8 +7,8 @@
     <ProjectGuid>{D0F7ACB0-B4C1-4597-BDA2-A9B2A52BD562}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lecture5</RootNamespace>
-    <AssemblyName>Lecture5</AssemblyName>
+    <RootNamespace>Lecture6</RootNamespace>
+    <AssemblyName>Lecture6</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,12 +45,14 @@
   <ItemGroup>
     <Compile Include="AccountBase.cs" />
     <Compile Include="AccumulationAccount.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankClientBase.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="CurentAccount.cs" />
-    <Compile Include="MetalAccount.cs" />
+    <Compile Include="CommonBankClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavingAccount.cs" />
+    <Compile Include="VIPBankClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
