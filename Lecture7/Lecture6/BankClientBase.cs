@@ -1,9 +1,9 @@
-﻿namespace Lecture6
+﻿namespace Lecture7
 {
     using System;
     using System.Collections.Generic;
 
-    public abstract class BankClientBase
+    public abstract class BankClientBase : IComparable
     {
         private readonly List<AccountBase> accounts = new List<AccountBase>();
 
@@ -85,21 +85,37 @@
 
         public void CloseCurentAccount(int accountId)
         {
-            bool closingAccounts = false;
+            int closingAccounts = 0;
 
             foreach (AccountBase account in accounts)
             {
                 if (accountId == account.Id)
                 {
                     account.CloseAccount();
-                    closingAccounts = true;
+                    closingAccounts++;
                 }
             }
 
-            if (closingAccounts == false)
+            if (closingAccounts == 0)
             {
                 Console.WriteLine($"Счет с номером {this.Id}, не найден.");
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            var client = (BankClientBase)obj;
+            if (CalculationTotal > client.CalculationTotal)
+            {
+                return 1;
+            }
+
+            if (CalculationTotal < client.CalculationTotal)
+            {
+                return -1;
+            }
+
+            return 0;
         }
     }
 }

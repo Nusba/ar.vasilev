@@ -26,6 +26,14 @@
 
         private double CourseExchangeMetal { get; set; }
 
+        protected override double Sum
+        {
+            get
+            {
+                return GrammsMetal + CourseExchangeMetal;
+            }
+        }
+
         public bool EditGrammsMetal(double grammsMetal)
         {
             if (this.IsClose)
@@ -64,7 +72,6 @@
             else
             {
                 this.CourseExchangeMetal = courseExchangeMetal;
-                this.Sum = this.CourseExchangeMetal * this.GrammsMetal;
                 return true;
             }
         }
@@ -84,8 +91,7 @@
                 }
                 else
                 {
-                    this.Sum = this.Sum - funds;
-                    this.GrammsMetal = this.Sum / this.CourseExchangeMetal;
+                    this.GrammsMetal = GrammsMetal - (funds / CourseExchangeMetal);
                     return true;
                 }
             }
@@ -100,8 +106,7 @@
             }
             else
             {
-                this.Sum = this.Sum + funds;
-                this.GrammsMetal = this.Sum / this.CourseExchangeMetal;
+                this.GrammsMetal = GrammsMetal + (funds / CourseExchangeMetal);
                 return true;
             }
         }
