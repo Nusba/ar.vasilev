@@ -1,11 +1,10 @@
-﻿namespace Lecture8
+﻿namespace Lecture9
 {
     using System;
-    using System.Collections.Generic;
 
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
              //Lecture8DZ1();
               Lecture8Dz2();
