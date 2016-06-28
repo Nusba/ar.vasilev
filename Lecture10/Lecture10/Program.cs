@@ -9,13 +9,14 @@ namespace Lecture10
     {
         static void Main(string[] args)
         {
-            //Lecture8Dz1();
-            Lecture8Dz2();
+            Lecture10Dz1();
+           // Lecture10Dz2();
         }
 
-        private static void Lecture8Dz1()
+        private static void Lecture10Dz1()
         {
             // Ввести с консоли N чисел, записать их в файл. Считать числа из файла, вывести на консоль. Сделать любым способом.
+            Console.WriteLine("Введите ряд чисел, что бы закончить ввод используйте '-1' ");
             List<int> numbers = new List<int>();
 
             while (true)
@@ -30,29 +31,29 @@ namespace Lecture10
                 numbers.Add(inputNumber);
             }
 
-            StreamWriter sw = new StreamWriter(@"C:\Icons\testtxt.txt");
-            foreach (var number in numbers)
+            using (StreamWriter sw = new StreamWriter(@"C:\Icons\testtxt.txt"))
             {
-                sw.WriteLine(number);
-            }
-            sw.Close();
-
-            StreamReader sr = new StreamReader(@"C:\Icons\testtxt.txt");
-
-            string name = sr.ReadLine();
-
-            while (name != null)
-            {
-                Console.WriteLine(name);
-                name = sr.ReadLine();
+                foreach (var writeNumber in numbers)
+                {
+                    sw.WriteLine(writeNumber);
+                }
             }
 
-            sr.Close();
+            using (StreamReader sr = new StreamReader(@"C:\Icons\testtxt.txt"))
+            {
+                string readNumber = sr.ReadLine();
+
+                while (readNumber != null)
+                {
+                    Console.WriteLine(readNumber);
+                    readNumber = sr.ReadLine();
+                }
+            }
 
             Console.ReadKey();
         }
 
-        private static void Lecture8Dz2()
+        private static void Lecture10Dz2()
         {
             //Считать из файла flowCards.Card все контакты, сохранить в 2 разных файла: рекламные и не рекламные контакты (разделять по атрибуту IsPromotional). Формат файла: < Contact_Value > [< Description >]
             XmlDocument contactCard = new XmlDocument();

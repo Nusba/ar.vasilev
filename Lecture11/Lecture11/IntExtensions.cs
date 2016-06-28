@@ -12,13 +12,5 @@ namespace Lecture11
                 Console.Write(number + " ");
             }
         }
-
-        public static void PrintNumbersWhithCustomeDelimiter(this List<int> numbers, string delimiter)
-        {
-            foreach (int number in numbers)
-            {
-                Console.Write(number + delimiter);
-            }
-        }
     }
 }

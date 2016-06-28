@@ -63,11 +63,10 @@ namespace Lecture11
             }
 
             Console.WriteLine("Введите разделитель");
-            string delimiter = Console.ReadLine();
-
             try
             {
-                numbers.PrintNumbersWhithCustomeDelimiter(delimiter);
+                string delimiter = Console.ReadLine();
+                Console.Write(string.Join(delimiter, numbers));
             }
             catch (NullReferenceException exception)
             {
